@@ -1,0 +1,34 @@
+{
+  "name": "whats-middle",
+  "version": "1.0.0",
+  "description": "Middleware que conecta ao WhatsApp (open-wa), salva o histórico de mensagens (privadas e grupos) num banco SQLite e expõe um dashboard SaaS para consulta.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:restart": "pm2 restart whats-middle",
+    "pm2:stop": "pm2 stop whats-middle",
+    "pm2:logs": "pm2 logs whats-middle"
+  },
+  "keywords": [
+    "whatsapp",
+    "open-wa",
+    "sqlite",
+    "dashboard",
+    "saas"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@open-wa/wa-automate": "^4.74.0",
+    "better-sqlite3": "^11.8.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ffmpeg-static": "^5.2.0",
+    "winston": "^3.17.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

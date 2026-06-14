@@ -1,0 +1,73 @@
+/* whats-middle — estilos complementares ao Tailwind */
+
+* { scrollbar-width: thin; scrollbar-color: #2a3942 transparent; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #2a3942; border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+
+/* Itens de navegação */
+.nav-item {
+  display: flex; align-items: center; gap: .65rem;
+  padding: .55rem .75rem; border-radius: .6rem;
+  color: #94a3b8; cursor: pointer; transition: background .15s, color .15s;
+}
+.nav-item:hover { background: #1f2c34; color: #e2e8f0; }
+.nav-item.active { background: #2a3942; color: #fff; }
+.nav-item .ic { width: 18px; text-align: center; }
+
+/* Avatares */
+.avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  object-fit: cover; background: #2a3942; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600; color: #cbd5e1; font-size: .8rem;
+}
+.avatar-sm { width: 34px; height: 34px; font-size: .7rem; }
+.avatar-xs { width: 22px; height: 22px; font-size: .58rem; }
+.avatar-lg { width: 64px; height: 64px; font-size: 1.1rem; }
+
+/* Cartões */
+.card { background: #16242c; border: 1px solid #1f2c34; border-radius: 1rem; }
+
+/* Lista clicável */
+.row { transition: background .12s; cursor: pointer; }
+.row:hover { background: #1f2c34; }
+.active-row { background: #2a3942; }
+
+/* Seleção múltipla de conversas */
+.chat-check { display: none; }
+.select-mode .chat-check { display: inline-block; }
+
+/* Mensagens: destaque ao pular para a citada, e swipe para responder */
+.msg-row { touch-action: pan-y; }
+.msg-highlight { outline: 2px solid #25D366; outline-offset: 2px; border-radius: .6rem; }
+
+/* Balões de mensagem */
+.bubble {
+  max-width: 70%; padding: .5rem .7rem; border-radius: .8rem;
+  font-size: .9rem; line-height: 1.35; word-break: break-word;
+}
+.bubble.in { background: #1f2c34; border-top-left-radius: .2rem; }
+.bubble.out { background: #144d37; border-top-right-radius: .2rem; align-self: flex-end; }
+.bubble .meta { font-size: .68rem; color: #7c8a93; margin-top: .2rem; }
+.bubble .sender { font-size: .72rem; font-weight: 600; color: #53bdeb; margin-bottom: .15rem; }
+.bubble .quote {
+  border-left: 3px solid #25D366; padding: .2rem .5rem; margin-bottom: .3rem;
+  background: rgba(0,0,0,.18); border-radius: .3rem; font-size: .78rem; color: #aab8bf;
+}
+
+.badge {
+  font-size: .65rem; padding: .1rem .45rem; border-radius: .4rem;
+  border: 1px solid currentColor;
+}
+
+.spinner {
+  width: 18px; height: 18px; border: 2px solid #2a3942; border-top-color: #25D366;
+  border-radius: 50%; animation: spin .8s linear infinite; display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.fade-in { animation: fade .25s ease; }
+@keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
